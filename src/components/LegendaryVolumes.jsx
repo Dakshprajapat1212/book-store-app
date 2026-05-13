@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import BookCoverImage from "./BookCoverImage";
 
 const LegendaryVolumes = () => {
   const volumes = [
@@ -32,8 +34,8 @@ const LegendaryVolumes = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-white to-teal-50 py-20">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="bg-gradient-to-b from-slate-50/80 to-white py-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center">
           <h2 className="text-4xl font-black text-slate-900 md:text-5xl">
             Legendary <span className="text-teal-600">Volumes</span>
@@ -50,10 +52,10 @@ const LegendaryVolumes = () => {
               key={b.id}
               className="group overflow-hidden rounded-[26px] border border-slate-100 bg-white shadow-md transition hover:-translate-y-2 hover:shadow-2xl"
             >
-              <img
+              <BookCoverImage
                 src={b.image}
                 alt={b.title}
-                className="h-56 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                className="h-56 w-full object-cover object-center transition duration-500 group-hover:scale-[1.03]"
               />
 
               <div className="p-6">
@@ -61,9 +63,12 @@ const LegendaryVolumes = () => {
                 <p className="mt-1 text-sm font-semibold text-teal-600">{b.author}</p>
                 <p className="mt-4 text-sm leading-6 text-slate-600">{b.description}</p>
 
-                <button className="mt-6 inline-flex items-center gap-2 font-bold text-teal-600 transition hover:gap-4">
-                  Discover <span>→</span>
-                </button>
+                <Link
+                  to="/books"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-teal-600 transition hover:gap-3"
+                >
+                  Discover <span aria-hidden>→</span>
+                </Link>
               </div>
             </div>
           ))}

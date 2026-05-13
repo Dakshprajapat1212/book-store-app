@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { addItem } from "../redux/cartSlice";
 import { addNotification } from "../redux/uiSlice";
 import { books } from "../data/dummy";
+import BookCoverImage from "../components/BookCoverImage";
 import {
   FaArrowLeft,
   FaShoppingCart,
@@ -116,10 +117,10 @@ const BookDetails = () => {
           >
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-blue-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity" />
-              <img
+              <BookCoverImage
                 src={book.image}
                 alt={book.title}
-                className="relative w-80 h-auto object-cover rounded-3xl shadow-2xl"
+                className="relative w-80 max-h-[28rem] object-cover object-center rounded-3xl shadow-2xl aspect-[2/3]"
               />
               {/* Badges */}
               <div className="absolute top-4 left-4 flex gap-2">

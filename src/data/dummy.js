@@ -1,3 +1,5 @@
+import { bookCoverForId } from "./bookCoverUrls";
+
 export const books = [
   {
     id: 1,
@@ -5,7 +7,7 @@ export const books = [
     author: "Geronimo Stilton",
     price: 233,
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/10523338-L.jpg",
+    image: bookCoverForId(1),
   },
   {
     id: 2,
@@ -13,7 +15,7 @@ export const books = [
     author: "Emily Zhang",
     price: 212,
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/11153245-L.jpg",
+    image: bookCoverForId(2),
   },
   {
     id: 3,
@@ -21,7 +23,7 @@ export const books = [
     author: "Oscar Patton",
     price: 325,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/10594755-L.jpg",
+    image: bookCoverForId(3),
   },
   {
     id: 4,
@@ -29,7 +31,7 @@ export const books = [
     author: "Debbie Bern",
     price: 738,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/10958324-L.jpg",
+    image: bookCoverForId(4),
   },
   {
     id: 5,
@@ -37,7 +39,7 @@ export const books = [
     author: "James Clear",
     price: 450,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/10594752-L.jpg",
+    image: bookCoverForId(5),
   },
   {
     id: 6,
@@ -45,7 +47,7 @@ export const books = [
     author: "Cal Newport",
     price: 399,
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/10292594-L.jpg",
+    image: bookCoverForId(6),
   },
   {
     id: 7,
@@ -53,7 +55,7 @@ export const books = [
     author: "Paulo Coelho",
     price: 299,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/8231856-L.jpg",
+    image: bookCoverForId(7),
   },
   {
     id: 8,
@@ -61,7 +63,7 @@ export const books = [
     author: "Napoleon Hill",
     price: 199,
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/8228691-L.jpg",
+    image: bookCoverForId(8),
   },
   {
     id: 9,
@@ -69,7 +71,7 @@ export const books = [
     author: "Peter Thiel",
     price: 350,
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/8370225-L.jpg",
+    image: bookCoverForId(9),
   },
   {
     id: 10,
@@ -77,7 +79,7 @@ export const books = [
     author: "Robert C. Martin",
     price: 599,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/9611996-L.jpg",
+    image: bookCoverForId(10),
   },
   {
     id: 11,
@@ -85,7 +87,7 @@ export const books = [
     author: "Andrew Hunt",
     price: 650,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/8091016-L.jpg",
+    image: bookCoverForId(11),
   },
   {
     id: 12,
@@ -93,7 +95,7 @@ export const books = [
     author: "Robert Kiyosaki",
     price: 299,
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/8101356-L.jpg",
+    image: bookCoverForId(12),
   },
   {
     id: 13,
@@ -101,7 +103,7 @@ export const books = [
     author: "Simon Sinek",
     price: 420,
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/8775116-L.jpg",
+    image: bookCoverForId(13),
   },
   {
     id: 14,
@@ -109,7 +111,7 @@ export const books = [
     author: "Eckhart Tolle",
     price: 380,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/240726-L.jpg",
+    image: bookCoverForId(14),
   },
   {
     id: 15,
@@ -117,7 +119,7 @@ export const books = [
     author: "Hector Garcia",
     price: 350,
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/9251996-L.jpg",
+    image: bookCoverForId(15),
   },
   {
     id: 16,
@@ -125,7 +127,7 @@ export const books = [
     author: "Mark Manson",
     price: 399,
     rating: 4,
-    image: "https://covers.openlibrary.org/b/id/8370221-L.jpg",
+    image: bookCoverForId(16),
   },
   {
     id: 17,
@@ -133,7 +135,7 @@ export const books = [
     author: "David Goggins",
     price: 499,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/10523339-L.jpg",
+    image: bookCoverForId(17),
   },
   {
     id: 18,
@@ -141,7 +143,7 @@ export const books = [
     author: "Yuval Noah Harari",
     price: 699,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/8167892-L.jpg",
+    image: bookCoverForId(18),
   },
   {
     id: 19,
@@ -149,7 +151,7 @@ export const books = [
     author: "J.K. Rowling",
     price: 550,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/7984916-L.jpg",
+    image: bookCoverForId(19),
   },
   {
     id: 20,
@@ -157,6 +159,6 @@ export const books = [
     author: "J.R.R. Tolkien",
     price: 480,
     rating: 5,
-    image: "https://covers.openlibrary.org/b/id/6979861-L.jpg",
+    image: bookCoverForId(20),
   },
 ];

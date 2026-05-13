@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleCart } from "../redux/uiSlice";
+import { toggleCart, setSearchQuery } from "../redux/uiSlice";
 import { FaShoppingCart, FaUser, FaBars, FaTimes, FaSearch } from "react-icons/fa";
 
 /**
@@ -25,11 +25,15 @@ import { FaShoppingCart, FaUser, FaBars, FaTimes, FaSearch } from "react-icons/f
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
   const location = useLocation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   
   // Redux selectors for cart count
   const itemCount = useSelector((state) => state.cart.itemCount);
+  const reduxSearchQuery = useSelector((state) => state.ui.searchQuery);
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -40,6 +44,26 @@ const Navbar = () => {
   ];
 
   const isActive = (path) => location.pathname === path;
+
+  // Handle search submission
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchInput.trim()) {
+      // Update Redux state
+      dispatch(setSearchQuery(searchInput.trim()));
+      // Update URL search params
+      setSearchParams({ search: searchInput.trim() });
+      // Navigate to books page
+      navigate('/books');
+      // Close search bar
+      setSearchOpen(false);
+    }
+  };
+
+  // Sync local input with Redux state on mount and when reduxSearchQuery changes
+  React.useEffect(() => {
+    setSearchInput(reduxSearchQuery);
+  }, [reduxSearchQuery]);
 
   return (
     <>
@@ -122,16 +146,25 @@ const Navbar = () => {
             searchOpen ? "max-h-16 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="max-w-7xl mx-auto px-6 py-3">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search books, authors, genres..."
-                className="w-full px-4 py-2 pl-10 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-              />
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
+          <form onSubmit={handleSearch}>
+            <div className="max-w-7xl mx-auto px-6 py-3">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  placeholder="Search books, authors, genres..."
+                  className="w-full px-4 py-2 pl-10 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                />
+                <button 
+                  type="submit"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-teal-600 hover:text-teal-700"
+                >
+                  <FaSearch size={16} />
+                </button>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </nav>
 

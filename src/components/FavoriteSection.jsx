@@ -1,80 +1,37 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import BookCard from "../cards/BookCard";
 import { favoriteBooks } from "../data/favoriteBooks.js";
 
 const FavoriteSection = () => {
   return (
-
-    // ================= COMPLETE SECTION =================
-    <section className="bg-gradient-to-r from-teal-300 to-lime-200 py-20 px-6">
-
-      {/* ================= MAIN CONTAINER ================= */}
-      <div className="max-w-7xl mx-auto bg-white rounded-[40px] p-10 shadow-2xl">
-
-        {/* ================= HEADER ================= */}
-        <div className="text-center mb-14">
-
-          {/* TITLE */}
-          <h2 className="text-5xl font-bold text-teal-600">
+    <section className="bg-gradient-to-br from-teal-200/90 via-teal-100/80 to-lime-200/90 py-16 px-4 sm:px-6 md:py-24">
+      <div className="mx-auto max-w-7xl rounded-3xl border border-white/50 bg-white/95 p-6 shadow-2xl shadow-teal-900/5 backdrop-blur-sm md:rounded-[2.5rem] md:p-10 lg:p-12">
+        <div className="mb-10 text-center md:mb-14">
+          <h2 className="text-3xl font-bold text-teal-700 md:text-4xl lg:text-5xl">
             Bookseller Favorites
           </h2>
-
-          {/* SMALL LINE */}
-          <div className="w-28 h-1 bg-gradient-to-r from-teal-400 to-lime-300 mx-auto mt-4 rounded-full" />
-
-          {/* SUBTITLE */}
-          <p className="text-gray-500 mt-5 text-lg">
+          <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-teal-400 to-lime-300" />
+          <p className="mx-auto mt-5 max-w-2xl text-base text-gray-600 md:text-lg">
             Discover the most loved books from our readers
           </p>
-
         </div>
 
-        {/* ================= BOOK GRID ================= */}
-        <div
-          className="
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-4
-            gap-10
-          "
-        >
-
-          {/* LOOP ALL BOOKS */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-9 lg:grid-cols-4 lg:gap-10">
           {favoriteBooks.map((book) => (
-
-            <BookCard
-              key={book.id}
-              book={book}
-            />
-
+            <BookCard key={book.id} book={book} />
           ))}
-
         </div>
 
-        {/* ================= BUTTON ================= */}
-        <div className="flex justify-center mt-16">
-
-          <button
-            className="
-              border-2 border-teal-400
-              px-10 py-3
-              rounded-full
-              text-teal-500
-              font-semibold
-              hover:bg-teal-400
-              hover:text-white
-              transition
-              duration-300
-            "
+        <div className="mt-12 flex justify-center md:mt-16">
+          <Link
+            to="/books"
+            className="inline-flex items-center rounded-full border-2 border-teal-500 bg-white px-10 py-3.5 text-sm font-semibold text-teal-600 shadow-sm transition hover:bg-teal-500 hover:text-white"
           >
-            View All Books →
-          </button>
-
+            View all books →
+          </Link>
         </div>
-
       </div>
-
     </section>
   );
 };

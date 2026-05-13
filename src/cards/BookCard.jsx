@@ -6,6 +6,7 @@ import { addNotification } from "../redux/uiSlice";
 import { useSelector } from "react-redux";
 import { FaShoppingCart, FaHeart, FaEye, FaMinus, FaPlus } from "react-icons/fa";
 import { motion } from "framer-motion";
+import BookCoverImage from "../components/BookCoverImage";
 
 /**
  * Premium BookCard Component
@@ -73,7 +74,7 @@ const BookCard = ({ book }) => {
 
   const handleQuickView = (e) => {
     e.stopPropagation();
-    navigate(`/book/${book.id}`);
+    navigate(`/books/${book.id}`);
   };
 
   // Animation variants
@@ -99,14 +100,14 @@ const BookCard = ({ book }) => {
       className="group relative bg-white/90 backdrop-blur-md rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 cursor-pointer"
       variants={cardVariants}
       whileHover="hover"
-      onClick={() => navigate(`/book/${book.id}`)}
+      onClick={() => navigate(`/books/${book.id}`)}
     >
       {/* ================= IMAGE SECTION ================= */}
       <div className="relative overflow-hidden">
-        <img
+        <BookCoverImage
           src={book.image}
           alt={book.title}
-          className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-72 object-cover object-center group-hover:scale-110 transition-transform duration-500"
         />
         
         {/* Category Badge */}

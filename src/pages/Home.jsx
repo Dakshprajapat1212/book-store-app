@@ -8,23 +8,13 @@ import Footer from "../components/Footer";
 
 const Home = () => {
   return (
-    <div>
-
-      {/* HERO SECTION */}
+    <div className="min-h-screen bg-[#f8fafb]">
       <Hero />
-
-      {/* CURATED BOOKS SECTION */}
       <CuratedSection />
-
-
       <FavoriteSection />
-
       <JourneySection />
       <LegendaryVolumes />
       <Footer />
-
-      
-
     </div>
   );
 };

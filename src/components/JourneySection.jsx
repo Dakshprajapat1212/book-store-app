@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import BookCoverImage from "./BookCoverImage";
 
 const JourneySection = () => {
   return (
-
-    // ================= MAIN SECTION =================
-    <section className="bg-gradient-to-r from-teal-50 to-lime-50 py-24 px-6">
+    <section className="bg-gradient-to-b from-white to-teal-50/60 py-20 px-4 sm:px-6 md:py-24">
 
       {/* ================= CONTAINER ================= */}
       <div
@@ -23,25 +23,10 @@ const JourneySection = () => {
         <div className="relative group">
 
           {/* IMAGE */}
-          <img
-
-            // 🔥 IMAGE URL
-            src="https://images.unsplash.com/photo-1507842217343-583bb7270b66"
-
-            alt="Library"
-
-            className="
-              rounded-3xl
-              shadow-2xl
-              border
-              border-teal-100
-              w-full
-              h-[420px]
-              object-cover
-              transition
-              duration-500
-              group-hover:scale-[1.02]
-            "
+          <BookCoverImage
+            src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80"
+            alt="Library interior with shelves of books"
+            className="h-[min(420px,55vh)] w-full rounded-3xl border border-teal-100 object-cover shadow-2xl transition duration-500 group-hover:scale-[1.02]"
           />
 
           {/* ================= GLOW EFFECT ================= */}
@@ -80,15 +65,7 @@ const JourneySection = () => {
           </span>
 
           {/* ================= TITLE ================= */}
-          <h2
-            className="
-              text-5xl
-              font-bold
-              text-gray-800
-              leading-tight
-              mt-6
-            "
-          >
+          <h2 className="mt-6 text-4xl font-bold leading-tight text-gray-800 md:text-5xl">
             Our Literary{" "}
             <span className="text-teal-600">
               Journey
@@ -223,25 +200,12 @@ const JourneySection = () => {
           </div>
 
           {/* ================= BUTTON ================= */}
-          <button
-            className="
-              mt-10
-              bg-gradient-to-r
-              from-teal-500
-              to-lime-300
-              text-white
-              px-8
-              py-4
-              rounded-full
-              font-semibold
-              shadow-lg
-              hover:scale-105
-              transition
-              duration-300
-            "
+          <Link
+            to="/about"
+            className="mt-10 inline-flex rounded-full bg-gradient-to-r from-teal-500 to-lime-400 px-8 py-4 text-sm font-semibold text-white shadow-lg transition hover:brightness-105"
           >
-            Learn More About Us →
-          </button>
+            Learn more about us →
+          </Link>
 
         </div>
 

@@ -1,3 +1,5 @@
+const Q = "?auto=format&fit=crop&w=600&q=80";
+
 export const favoriteBooks = [
   {
     id: 1,
@@ -5,8 +7,8 @@ export const favoriteBooks = [
     author: "James Clear",
     price: 499,
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1544947950-fa07a98d237f",
+    category: "Self Growth",
+    image: `https://images.unsplash.com/photo-1544947950-fa07a98d237f${Q}`,
   },
 
   {
@@ -15,8 +17,8 @@ export const favoriteBooks = [
     author: "Paulo Coelho",
     price: 399,
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794",
+    category: "Fiction",
+    image: `https://images.unsplash.com/photo-1512820790803-83ca734da794${Q}`,
   },
 
   {
@@ -25,8 +27,8 @@ export const favoriteBooks = [
     author: "J.K. Rowling",
     price: 699,
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1516979187457-637abb4f9353",
+    category: "Fantasy",
+    image: `https://images.unsplash.com/photo-1516979187457-637abb4f9353${Q}`,
   },
 
   {
@@ -35,8 +37,8 @@ export const favoriteBooks = [
     author: "Robert Kiyosaki",
     price: 450,
     rating: 4,
-    image:
-      "https://images.unsplash.com/photo-1495446815901-a7297e633e8d",
+    category: "Business",
+    image: `https://images.unsplash.com/photo-1495446815901-a7297e633e8d${Q}`,
   },
 
   {
@@ -45,8 +47,8 @@ export const favoriteBooks = [
     author: "Cal Newport",
     price: 520,
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1519682337058-a94d519337bc",
+    category: "Self Growth",
+    image: `https://images.unsplash.com/photo-1519682337058-a94d519337bc${Q}`,
   },
 
   {
@@ -55,8 +57,8 @@ export const favoriteBooks = [
     author: "Yuval Noah Harari",
     price: 799,
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1521587760476-6c12a4b040da",
+    category: "History",
+    image: `https://images.unsplash.com/photo-1521587760476-6c12a4b040da${Q}`,
   },
 
   {
@@ -65,8 +67,8 @@ export const favoriteBooks = [
     author: "J.R.R Tolkien",
     price: 599,
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1507842217343-583bb7270b66",
+    category: "Fantasy",
+    image: `https://images.unsplash.com/photo-1507842217343-583bb7270b66${Q}`,
   },
 
   {
@@ -75,7 +77,7 @@ export const favoriteBooks = [
     author: "Peter Thiel",
     price: 430,
     rating: 4,
-    image:
-      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f",
+    category: "Business",
+    image: `https://images.unsplash.com/photo-1524995997946-a1c2e315a42f${Q}`,
   },
 ];
